@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { config } from "../lib/contract-addresses";
+import { ConnectWalletButton } from "./components/ConnectWalletButton";
 
 export default function Home() {
   return (
@@ -33,6 +34,12 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Wallet Connection */}
+        <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Wallet Connection</h2>
+          <ConnectWalletButton />
         </div>
 
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">

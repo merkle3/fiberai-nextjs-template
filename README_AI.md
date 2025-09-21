@@ -11,3 +11,6 @@ It uses the Tailwind CSS framework to style the frontend.
 It uses the TypeScript programming language to write the code.
 
 Whenever you need to add/modify contracts, make sure to add them to the DeployAll script and deploy them using the Makefile. Then you need to make sure to update the app with the new contract addresses.
+
+Inside the lib/fiber-utils.ts file, you will find the FiberUtils class which is a singleton class that provides all the functionality to interact with the Fiber chain.
+Use that class to read/write contracts, subscribe to events, etc. Do not use the viem client directly.
