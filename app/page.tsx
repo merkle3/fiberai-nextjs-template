@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { config } from "../lib/contract-addresses";
 
 export default function Home() {
   return (
@@ -12,6 +13,28 @@ export default function Home() {
           height={38}
           priority
         />
+
+        {/* Contract Addresses Display */}
+        <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Deployed Contracts</h2>
+          <div className="space-y-2">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Network: {config.network.name} (Chain ID: {config.network.chainId}
+              )
+            </p>
+            <div className="space-y-1">
+              {Object.entries(config.contracts).map(([name, address]) => (
+                <div key={name} className="flex items-center gap-2">
+                  <span className="font-medium capitalize">{name}:</span>
+                  <code className="bg-black/[.05] dark:bg-white/[.06] font-mono text-sm px-2 py-1 rounded">
+                    {address}
+                  </code>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}
