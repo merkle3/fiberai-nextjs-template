@@ -6,6 +6,7 @@ import {
   encodeFunctionData,
   hexToString,
   parseEther,
+  type PrivateKeyAccount,
 } from "viem";
 import {
   createFiberTransport,
@@ -48,7 +49,7 @@ export class FiberUtils {
       abi?: any;
       functionName: string;
       args?: readonly unknown[];
-      account: any;
+      account: PrivateKeyAccount;
       gas?: bigint;
       gasPrice?: bigint;
       nonce?: number;
@@ -175,7 +176,7 @@ export class FiberUtils {
     abi?: any;
     functionName: string;
     args?: readonly unknown[];
-    account: any;
+    account: PrivateKeyAccount;
     gas?: bigint;
     gasPrice?: bigint;
     nonce?: number;
@@ -221,7 +222,7 @@ export class FiberUtils {
     abi: any;
     functionName: TFunctionName;
     args?: TArgs;
-    account: any;
+    account: PrivateKeyAccount;
     gas?: bigint;
     gasPrice?: bigint;
     nonce?: number; // If not provided, will be fetched automatically
@@ -467,7 +468,7 @@ export class FiberUtils {
   }: {
     to: `0x${string}`;
     value: string;
-    account: any;
+    account: PrivateKeyAccount;
     nonce?: number;
     gasPrice?: bigint;
   }): Promise<`0x${string}`> {
