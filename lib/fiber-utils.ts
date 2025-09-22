@@ -89,7 +89,7 @@ export class FiberUtils {
     abi,
     functionName,
     args = [],
-    gas = BigInt(600000),
+    gas = BigInt(0),
     gasPrice = BigInt(1),
   }: {
     address: `0x${string}`;
@@ -213,8 +213,8 @@ export class FiberUtils {
     functionName,
     args,
     account,
-    gas = BigInt(600000),
-    gasPrice = BigInt(1),
+    gas = BigInt(0),
+    gasPrice = BigInt(0),
     value = BigInt(0),
     nonce,
   }: {

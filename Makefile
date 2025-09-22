@@ -2,10 +2,11 @@
 RPC_URL = https://testnet.fiberevm.com
 SENDER = 0x2557794Bf452ec0a9cB923B03b2D2fb550E17357
 PRIVATE_KEY = d27798744baaa809fb04fa587023a3f80dfae7a9f6a2978d1fad89571d84d478
+FORGE_BIN = $$HOME/.foundry/bin/forge
 
 deploy-all:
 	@echo "Deploying all contracts..."
-	forge script ./script/DeployAll.s.sol:DeployAllScript -vvv \
+	$(FORGE_BIN) script ./script/DeployAll.s.sol:DeployAllScript -vvv \
 		--fork-url $(RPC_URL) \
 		--broadcast \
 		--sender 0x38421c898cfC5883ddCEC1247EA3f7Ff087Dd6ca \
